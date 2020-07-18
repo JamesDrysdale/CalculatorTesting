@@ -50,4 +50,14 @@ describe('calculator', function () {
     assert.strictEqual(350, calculator.runningTotal);
   })
 
+  it('should chain multiple operators together', function(){
+    calculator.numberClick(4);
+    calculator.operatorClick("+");
+    calculator.numberClick(4);
+    calculator.operatorClick("-");
+    calculator.numberClick(2);
+    calculator.operatorClick("=");
+    assert.strictEqual(6, calculator.runningTotal);
+  })
+
 });
