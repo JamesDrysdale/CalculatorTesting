@@ -60,4 +60,15 @@ describe('calculator', function () {
     assert.strictEqual(6, calculator.runningTotal);
   })
 
+  it('should chain multiple operators together', function(){
+    calculator.numberClick(5);
+    calculator.operatorClick("+");
+    calculator.numberClick(9);
+    calculator.operatorClick("+");
+    calculator.numberClick(2);
+    calculator.operatorClick("clr");
+    calculator.operatorClick("=");
+    assert.strictEqual(16, calculator.runningTotal);
+  })
+
 });
