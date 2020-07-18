@@ -35,5 +35,12 @@ describe('calculator', function () {
     assert.strictEqual(15, calculator.runningTotal);
   })
 
+  it('should divide numbers', function(){
+    calculator.numberClick(21);
+    calculator.operatorClick("/");
+    calculator.numberClick(7);
+    calculator.operatorClick("=");
+    assert.strictEqual(3, calculator.runningTotal);
+  })
 
 });
