@@ -43,4 +43,11 @@ describe('calculator', function () {
     assert.strictEqual(3, calculator.runningTotal);
   })
 
+  it('should concatenate multiple button clocks', function(){
+    calculator.numberClick(3);
+    calculator.numberClick(5);
+    calculator.numberClick(0);
+    assert.strictEqual(350, calculator.runningTotal);
+  })
+
 });
