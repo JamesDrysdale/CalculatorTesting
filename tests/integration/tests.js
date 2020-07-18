@@ -83,8 +83,17 @@ it('should display very large numbers', function() {
   element(by.css('#number9')).click();
   element(by.css('#operator_equals')).click();
   expect(running_total.getAttribute('value')).to.eventually.equal('998001')
-
 })
+
+it('should divide by zero', function() {
+  running_total = element(by.css('#running_total'))
+  element(by.css('#number5')).click();
+  element(by.css('#operator_divide')).click();
+  element(by.css('#number0')).click();
+  element(by.css('#operator_equals')).click();
+  expect(running_total.getAttribute('value')).to.eventually.equal("Can't divide by zero")
+})
+
 
 
 
